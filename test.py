@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from chatgpt-api import get_budget_advice
+from chatgpt_api import get_budget_advice
 import json
 
 class TestChatGPTAPI(unittest.TestCase):
