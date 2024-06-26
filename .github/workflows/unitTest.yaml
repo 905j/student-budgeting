@@ -11,15 +11,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.11.3
-<<<<<<< HEAD
-        
-=======
-          
->>>>>>> 6190728ad4b397686faec2fcdcb35de692a01077
-      - name: Install openai
-        run: |
-           python -m pip install --upgrade pip
-           pip install openai
 
       - name: Install tools
         run: python -m pip install --upgrade pip pytest
