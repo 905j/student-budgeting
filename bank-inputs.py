@@ -1,9 +1,25 @@
 def get_user_input():
-    user_data = {}
-    user_data['name'] = input("Enter your name: ")
-    user_data['checkings'] = float(input("Enter your checkings amount: "))
-    user_data['savings'] = float(input("Enter your savings amount: "))
-    user_data['earnings'] = float(input("Enter your monthly earnings: "))
-    user_data['needs'] = input("Enter your current needs (separate it with commas): ").split(',')
-    user_data['wants'] = input("Enter your current wants (separate it with commas): ").split(',')
-    return user_data
+    name = input("Enter your name: ")
+    savings_amount = float(input("Enter your savings account amount: "))
+    monthly_earnings = float(input("Enter your monthly earnings: "))
+    
+    needs = []
+    wants = []
+    
+    num_needs = int(input("Enter the number of needs: "))
+    for i in range(num_needs):
+        need = input(f"Enter need # {i+1}: ")
+        needs.append(need)
+        
+    num_wants = int(input("Enter the number of wants: "))
+    for i in range(num_wants):
+        want = input(f"Enter want # {i+1}: ")
+        wants.append(want)
+    
+    return {
+        "name": name,
+        "savings_amount": savings_amount,
+        "monthly_earnings": monthly_earnings,
+        "needs": needs,
+        "wants": wants
+    }
