@@ -21,5 +21,6 @@ def get_user_input():
         "savings_amount": savings_amount,
         "monthly_earnings": monthly_earnings,
         "needs": needs,
-        "wants": wants
+        "wants": wants    
     }
+

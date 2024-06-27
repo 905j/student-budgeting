@@ -1,7 +1,8 @@
 import openai
 import bank_inputs
+import os
 
-openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_key = os.getenv('OPENAI_KEY')
 
 def get_budget_advice(student_info):
     name = student_info["name"]
@@ -45,3 +46,7 @@ def get_budget_advice(student_info):
     )
     
     return response.choices[0].message['content']
+
+student_info = bank_inputs.get_user_input()
+budget_advice = get_budget_advice(student_info)
+print(budget_advice)
