@@ -15,7 +15,8 @@ def get_budget_advice(student_info):
     a list of their NEEDS, and WANTS. You are to give me, in json (integers for the amounts), how much of their monthly earnings should go to savings, 
     each of their needs, each of their wants, and one sentence of constructive feedback to better their spending habits. 
     The priority should be needs, savings, and then wants. Make sure wants do not exceed 10% of the student's earnings feel free to give 0 to wants 
-    if the student does not make. Consider the real-world average costs in the United States for the given wants and need and generate the budget accordingly.
+    if the student does not make.  Consider the real-world average costs in the United States for the given wants
+    and need and generate the budget accordingly. Also, ensure that the amount distributed across the budget plan adds up to monthly earnings.
     The format of the json should be
     {
     "savings": integer,
@@ -47,6 +48,6 @@ def get_budget_advice(student_info):
     
     return response.choices[0].message['content']
 
-student_info = bank_inputs.get_user_input()
-budget_advice = get_budget_advice(student_info)
-print(budget_advice)
+#student_info = bank_inputs.get_user_input()
+#budget_advice = get_budget_advice(student_info)
+#print(budget_advice)
