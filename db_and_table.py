@@ -34,20 +34,5 @@ def create_db_and_table(username, budget_data):
 
 student_info = get_user_input()
 budget_advice = get_budget_advice(student_info)
-
-#removes whitespace and trailing spaces to make sure advice is truly not empty
-if budget_advice.strip():
-    print("Budget advice:", budget_advice)
-    try:
-        budget_data = json.loads(budget_advice)
-        create_db_and_table(student_info["name"], budget_data)
-    # there was a previous error where json.loads was not function but the try-except block
-    # The except block ensures we do not
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
-else:
-    print("Error: Empty or invalid budget advice received.")
-
-#print("Budget advice:", budget_advice)
-#budget_data = json.loads(budget_advice)
-#create_db_and_table(student_info["name"], budget_data)
+budget_data = json.loads(budget_advice)
+create_db_and_table(student_info["name"], budget_data)
